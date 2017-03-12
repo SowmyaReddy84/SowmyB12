@@ -12,7 +12,7 @@ angular.module('myApp').factory('JobService', ['$http', '$q', function($http, $q
 
     function fetchAllJob() {
         var deferred = $q.defer();
-        $http.get('http://localhost:8080/OrgValleyBackend/job')
+        $http.get('http://localhost:8081/CoolCodersBackend/job')
             .then(
             function (response) {
             	console.log('Got data');
@@ -31,7 +31,7 @@ angular.module('myApp').factory('JobService', ['$http', '$q', function($http, $q
         var deferred = $q.defer();
         console.log('22222222222222222222222',jid);
         
-        $http.get('http://localhost:8080/OrgValleyBackend/coments/'+jid)
+        $http.get('http://localhost:8081/CoolCodersBackend/coments/'+jid)
             .then(
             function (response) {
             	console.log('Goooooooooooooooooooooooot');

@@ -30,7 +30,7 @@ angular.module('myApp').factory('BlogService', ['$http', '$q', function($http, $
     function addBlog(blogm) {
         var deferred = $q.defer();
         console.log("2222222222222222222222222222222222222");
-        $http.post('http://localhost:8081/coolcodersbackend/blog/insert/',blogm)
+        $http.post('http://localhost:8081/CoolCodersBackend/blog/insert/',blogm)
             .then(
             		
             function (response) {
@@ -48,7 +48,7 @@ angular.module('myApp').factory('BlogService', ['$http', '$q', function($http, $
     }
     function addCom(comment) {
         var deferred = $q.defer();
-        $http.post('http://localhost:8081/coolcodersbackend/cmnt/insert/',comment)
+        $http.post('http://localhost:8081/CoolCodersBackend/cmnt/insert/',comment)
       
             .then(
             		
@@ -66,7 +66,7 @@ angular.module('myApp').factory('BlogService', ['$http', '$q', function($http, $
    
     function fetchAllCom(bid) {
         var deferred = $q.defer();
-        $http.get('http://localhost:8081/coolcodersbackend/coments/'+bid)
+        $http.get('http://localhost:8081/CoolCodersBackend/coments/'+bid)
             .then(
             function (response) {
             	console.log('Got data');

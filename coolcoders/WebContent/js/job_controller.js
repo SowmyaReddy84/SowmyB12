@@ -2,14 +2,14 @@
 
 angular.module('myApp').controller('JobController', ['$scope', 'JobService', function($scope, JobService) {
    
-	$scope.jobm={jid:'',title:'',qualification:'',description:'',jdat:''};
+	$scope.jobm={jid:'',title:'',qualification:'',description:'',jdate:''};
     $scope.job=[];
     
     $scope.coment={cid:'',jid:'',jusr:''};
     $scope.coments=[];
     
     fetchAllJob();
-    $scope.titl="OrgValleyBackendJob"
+    $scope.titl="CoolCodersBackendJob"
     
     	 function fetchAllJob(){
     	JobService.fetchAllJob()

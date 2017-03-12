@@ -17,10 +17,10 @@ public static void main(String[] args) {
 	
 	JobDao jobDao = (JobDao) ctx.getBean("jobDao");
 	Job job = (Job) ctx.getBean("job");
-	job.setJid(2);
-	job.setTitle("manager");
+	job.setJid(3);
+	job.setTitle("Web developer");
 	job.setDescription("requires min 2 years experience");
-	job.setQualification("pg");
+	job.setQualification("B.E,B.TECH");
 	jobDao.SaveOrUpdate(job);
 	System.out.println("inserted");
 //	

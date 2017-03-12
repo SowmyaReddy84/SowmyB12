@@ -3,6 +3,7 @@ com\niit\coolcodersbackend\restcontroller\BlogController.class
 com\niit\coolcodersbackend\daoimpl\Forum_ResponseDaoImpl.class
 com\niit\coolcodersbackend\dao\Blog_MasterDao.class
 com\niit\coolcodersbackend\model\Forum_Master.class
+com\niit\coolcodersbackend\model\DateConvertions.class
 com\niit\coolcodersbackend\dao\Forum_MasterDao.class
 com\niit\coolcodersbackend\dao\Forum_ResponseDao.class
 com\niit\coolcodersbackend\restcontroller\ForumController.class
