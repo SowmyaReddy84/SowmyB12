@@ -1,0 +1,71 @@
+.top-header {
+	text-align: center;
+	letter-spacing: 2px;
+  color: white;
+  padding-top: 130px;
+  margin-bottom: 50px;
+ 	background: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: 0 -80px;
+  height: 450px;
+  width: 100%;
+ }
+<!-- first-->
+.navbar-custom {
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	background: 0 0; /* Find out what this 'background' does */
+	border: 1px solid transparent;
+	padding-top: 5px;
+}
+
+div > h1 {
+	font-family: "Century Gothic", "Goudy Old Style", Serif;
+	font-weight: bold;
+	color: white;
+	font-size: 80px;
+}
+
+.subheading {
+	font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:24px;
+	margin:10px 0 40px;
+}
+
+.short {
+	border-top: 5px solid white;
+	width: 100px;
+}
+
+p {
+    line-height: 2;
+    margin-top: 30px;
+}
+
+/*a {
+	color:#404040
+} */
+.navbar-custom
+.navbar-brand {
+	font-weight: 800;
+	color: white;
+}
+
+.navbar-custom
+.nav li a {
+	font-size:12px;
+	font-weight:800;
+	letter-spacing:1px;
+	color: white;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: red;
+}
+

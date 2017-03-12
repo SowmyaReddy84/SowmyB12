@@ -1,0 +1,93 @@
+/*sign in css starts*/
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+body, html {
+	height: 100%;
+	background-repeat: no-repeat;    /*background-image: linear-gradient(rgb(12, 97, 33),rgb(104, 145, 162));*/
+	background:#008080;
+	position: relative;
+}
+#login-box {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 350px;
+	margin: 0 auto;
+	border: 1px solid black;
+	background:#dfdfdf;
+	min-height: 250px;
+	padding: 20px;
+	z-index: 9999;
+}
+#login-box .logo .logo-caption {
+	font-family: 'Poiret One', cursive;
+	color: #008080;
+	text-align: center;
+	margin-bottom: 0px;
+}
+#login-box .logo .tweak {
+	color: #ff5252;
+}
+#login-box .controls {
+	padding-top: 30px;
+}
+#login-box .controls input {
+	border-radius: 5px;
+	background:#008080;
+	border: 0px;
+	color: white;
+	font-family: 'Nunito', sans-serif;
+}
+#login-box .controls input:focus {
+	box-shadow: none;
+}
+#login-box .controls input:first-child {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#login-box .controls input:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+#login-box button.btn-custom {
+	border-radius: 5px;
+	margin-top: 8px;
+	background:#e52b50;
+	border-color:#408080;
+	color: white;
+	font-family: 'Nunito', sans-serif;
+}
+#login-box button.btn-custom:hover{
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+	background: #ff355e;
+	border-color: #ff5252;
+}
+#particles-js{
+  	width: 100%;
+  	height: 100%;
+  	background-size: cover;
+  	background-position: 50% 50%;
+  	position: fixed;
+  	top: 0px;
+  	z-index:1;
+}
+/*sign in css ends*/
+/*register in css starts*/
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+
+/*register in css starts*/

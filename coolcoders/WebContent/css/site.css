@@ -1,0 +1,60 @@
+html, body {
+	height: 100%; margin: 0px;
+}
+
+body {
+	//background-color: #52BE80;
+	
+
+background: #239B56; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #239B56 , #239B56); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #239B56 , #239B56); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+	    
+	font-family: Helvetica; font-size: 12pt;
+}
+
+#container {
+	display: block; position: absolute; bottom:0; top:0; left:0; right:0; margin: 8px; 
+}
+
+#msgContainer {
+	position: absolute; top: 0px; bottom: 45px;
+	 /*background-color: white;*/
+	 background: #009933; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #239B56 , #239B56); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #239B56 , #239B56); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+	 width: 100%;
+}
+
+#msgContainer .msgrow {
+	//background-color: #52BE80;
+	
+background: #009933; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #239B56 , #239B56)!important; /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #239B56 , #239B56) ; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+        
+	
+	color: white;
+	font-weight: bold;
+	margin: 5px 0px 5px 0px;
+	padding: 6px;
+	//border-radius: 12px;
+	border: 2px solid;
+}
+
+#msgController {
+	position: absolute; bottom: 0px; height: 40px; display: flex; width: 100%;
+}
+
+#loginPanel {
+	width: 550px; padding: 80px; margin: 10px auto; 
+}
+
+#loginPanel #infoLabel {
+	color: white; text-align: center; margin:10px;
+}
+
+#loginPanel .loginInput {
+	width: 100%; border-radius: 6px; margin: 10px 0px;
+}

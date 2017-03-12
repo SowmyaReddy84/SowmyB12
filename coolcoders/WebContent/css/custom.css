@@ -1,0 +1,300 @@
+.top-header {
+	text-align: center;
+	letter-spacing: 2px;
+  color: white;
+  padding-top: 130px;
+  margin-bottom: 50px;
+ 	background: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: 0 -80px;
+  height: 450px;
+  width: 100%;
+ }
+
+.navbar-custom {
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	background: 0 0; /* Find out what this 'background' does */
+	border: 1px solid transparent;
+	padding-top: 5px;
+}
+
+div > h1 {
+	font-family: "Century Gothic", "Goudy Old Style", Serif;
+	font-weight: bold;
+	color: white;
+	font-size: 80px;
+}
+
+.subheading {
+	font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:24px;
+	margin:10px 0 40px;
+}
+
+.short {
+	border-top: 5px solid white;
+	width: 100px;
+}
+
+p {
+    line-height: 2;
+    margin-top: 30px;
+}
+
+/*a {
+	color:#404040
+} */
+.navbar-custom
+.navbar-brand {
+	font-weight: 800;
+	color: white;
+}
+
+.navbar-custom
+.nav li a {
+	font-size:12px;
+	font-weight:800;
+	letter-spacing:1px;
+	color: white;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: red;
+}
+/*
+a:hover,
+a:focus {
+	color:red;
+} */
+
+.post-preview > a >.post-title {
+	font-size:30px;
+	margin-top:30px;
+	margin-bottom:10px;
+	line-height: 1.2;
+}
+
+.post-preview > a {
+	color:#404040;
+}
+
+.post-preview > a:hover,
+.post-preview > a:focus {
+	text-decoration:none;
+	color:#0085a1;
+}
+
+.post-preview > a >.post-title {
+	font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif, Serif;
+	font-weight: 800;
+	font-size:35px;
+	margin-top:30px;
+	margin-bottom:10px;
+}
+
+.post-preview > a >.post-subtitle {
+	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif, Serif;
+	margin:0;
+	font-weight:300;
+	margin-bottom:10px;
+}
+
+.post-preview > .post-detail {
+	color:gray;
+	font-size:18px;
+	font-style:italic;
+	margin-top:0;
+}
+
+.post-preview > .post-detail > a {
+	text-decoration:none;
+	color:#404040
+}
+
+.post-preview > .post-detail> a:hover,
+.post-preview > .post-detail > a:focus {
+	color:#0085a1;
+	text-decoration:underline;
+}
+
+.pager li > a {
+	border-radius: 0;
+	color: black;
+	font-family: "Century Gothic", "Goudy Old Style", Serif;
+	font-weight: bold;
+	font-size: 15px;
+	margin: auto;
+	padding: 10px 30px 10px 30px;
+}
+
+.pager li > a:hover,
+.pager li > a:focus {
+  background-color: #0085a1;
+  color: white;
+}
+
+.social {
+  margin: 0;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.social ul {
+  margin: 0;
+  padding: 5px;
+}
+
+.social ul li {
+  margin: 10px;
+  list-style: none;
+  display: inline-block;
+}
+
+.social i {
+  width: 40px;
+  height: 40px;
+  color: #FFF;
+  background-color: #808080;
+  font-size: 22px;
+  text-align:center;
+  padding-top: 12px;
+  border-radius: 50%;
+}
+
+.social i:hover {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.social .fa-twitter:hover,
+.social .fa-facebook:hover,
+.social .fa-github:hover {
+	background: #0085a1;
+}
+
+#foot {
+	padding-bottom: 50px;
+	margin-top: 10px;
+	font-family: "Century Gothic", "Goudy Old Style", Serif;
+}
+<!-- ADD NEW BLOG CSS STARTS -->
+ *{
+   margin:0px;
+   padding:0px;
+    
+  }
+  body,#container1{
+  	
+  	font-family:verdana;
+  	color:#009;
+  	position:relative;
+  }
+  #container1
+{
+width:900px;
+margin:0px auto;
+border:2px solid red;
+
+
+
+}
+#container2{
+position:absolute;
+top:0px;
+left:opx;
+
+
+}
+#content1 {
+        margin-bottom:10px;
+    }
+
+    .col-md-3 {
+        margin-left: 10%;
+    }
+
+    button {
+        margin: 30px 50%;
+        line-height: 40px;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        outline: none !important;
+        width: 100%;
+    }
+
+    button:active {
+        outline: none;
+    }
+
+    h2 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-right: 0;
+        font-weight: bold;
+       margin-left: 25px;
+    }
+
+    button.ribbon {
+        outline: none;
+        outline-color: transparent;
+    }
+
+    button.ribbon:before, button.ribbon:after {
+        top: 15px;
+        z-index: -10;
+    }
+
+    button.ribbon:before {
+        border-color: #53dab6 #53dab6 #53dab6 transparent;
+        left: -25px;
+        top: -10px;
+        border-width: 15px;
+    }
+
+    button.ribbon:after {
+        border-color: #53dab6 transparent #53dab6 #53dab6;
+        right: -25px;
+        top: 10px;
+        border-width: 15px;
+    }
+
+    button:before, button:after {
+        content: '';
+        position: absolute;
+        height: 0;
+        width: 0;
+        border-style: solid;
+        border-width: 0;
+        outline: none;
+    }
+
+   
+
+    button.btn-primary:before {
+        border-color: #2e6da4 #2e6da4 #2e6da4 transparent;
+    }
+
+    button.btn-primary:after {
+        border-color: #2e6da4 transparent #2e6da4 #2e6da4;
+    }
+
+    button.btn-success:before {
+        border-color: #66CC66 #66CC66 #66CC66 transparent;
+    }
+
+    button.btn-success:after {
+        border-color: #66CC66 transparent #66CC66 #66CC66;
+    }
+
+  
+    <!-- css for ADD NEW BLOG ENDS HERE-->
