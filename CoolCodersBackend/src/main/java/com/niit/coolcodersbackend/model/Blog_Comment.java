@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import org.springframework.stereotype.Component;
 
+import oracle.sql.DATE;
+
 @Entity
 @Component
 public class Blog_Comment {
@@ -16,16 +18,9 @@ public class Blog_Comment {
 	private int bid;
 	private String cmnt;
 	private String buser;
-	private long cdate;
+	private DATE cdate;
 	
-	public long getCdate() {
-		return cdate;
-	}
-
-
-	public void setCdate(long cdate) {
-		this.cdate = cdate;
-	}
+	
 
 
 	public Blog_Comment() {
@@ -33,7 +28,7 @@ public class Blog_Comment {
 	}
 
 
-	public Blog_Comment(int cid, int bid, String cmnt, String buser, long cdate) {
+	public Blog_Comment(int cid, int bid, String cmnt, String buser, DATE cdate) {
 		
 		this.cid = cid;
 		this.bid = bid;
@@ -73,6 +68,16 @@ public class Blog_Comment {
 
 	public void setBuser(String buser) {
 		this.buser = buser;
+	}
+
+
+	public DATE getCdate() {
+		return cdate;
+	}
+
+
+	public void setCdate(DATE cdate) {
+		this.cdate = cdate;
 	}
 
 

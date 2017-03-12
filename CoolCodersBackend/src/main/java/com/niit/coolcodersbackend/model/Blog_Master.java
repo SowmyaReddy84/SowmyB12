@@ -22,7 +22,7 @@ private String bdesc;
 private MultipartFile bimg;
 private Date bpstdate;
 private String buser;
-private String bsec;
+private String bdeta;
 private int bcmnt;
 private int blike;
 private String blog_image;
@@ -31,7 +31,7 @@ private String blog_image;
 public Blog_Master() {
 	
 }
-public Blog_Master(String btitle, String bdesc, Date bpstdate, String buser, String bsec,
+public Blog_Master(String btitle, String bdesc, Date bpstdate, String buser, String bdeta,
 		int bcmnt, int blike) {
 	
 	
@@ -39,7 +39,7 @@ public Blog_Master(String btitle, String bdesc, Date bpstdate, String buser, Str
 	this.bdesc = bdesc;
 	this.bpstdate = bpstdate;
 	this.buser = buser;
-	this.bsec = bsec;
+	this.bdeta = bdeta;
 	this.bcmnt = bcmnt;
 	this.blike = blike;
 }
@@ -79,11 +79,11 @@ public String getBuser() {
 public void setBuser(String buser) {
 	this.buser = buser;
 }
-public String getBsec() {
-	return bsec;
+public String getBdeta() {
+	return bdeta;
 }
-public void setBsec(String bsec) {
-	this.bsec = bsec;
+public void setBdata(String bdeta) {
+	this.bdeta = bdeta;
 }
 public int getBcmnt() {
 	return bcmnt;

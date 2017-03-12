@@ -2,7 +2,7 @@
 
 angular.module('myApp').controller('BlogController', ['$scope', 'BlogService', function($scope, BlogService) {
    
-	$scope.blogm={bid:'',btitle:'',bdy:'',bimg:null,busr:'',bsec:'',bcmtct:'',blikct:''};
+	$scope.blogm={bid:'',btitle:'',bdesc:'',bimg:null,busr:'',bsec:'',bcmnt:'',blike:''};
     $scope.blogs=[];
 	
     $scope.coment={cid:'',bid:'',busr:'',cdt:'',cmt:''};

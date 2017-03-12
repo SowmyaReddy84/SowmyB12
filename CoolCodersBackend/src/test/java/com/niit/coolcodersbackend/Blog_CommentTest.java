@@ -1,11 +1,13 @@
 package com.niit.coolcodersbackend;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.coolcodersbackend.dao.Blog_CommentDao;
 import com.niit.coolcodersbackend.model.Blog_Comment;
+import com.niit.coolcodersbackend.model.DateConvertions;
 
 
 
@@ -18,6 +20,10 @@ public static void main(String[] args) {
 	ctx.refresh();
 	System.out.println("DONEEEEEEEEEEEEEEEEEEEEE");
 	
+	
+	long tim=DateConvertions.getDatetoLong(new Date());
+	
+	
 	Blog_CommentDao blogCommentDao= (Blog_CommentDao) ctx.getBean("blog_commentDao");
 	System.out.println("doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 	Blog_Comment blog_comment=(Blog_Comment) ctx.getBean("blog_comment");
@@ -25,7 +31,7 @@ public static void main(String[] args) {
 blog_comment.setBid(2);
 blog_comment.setBuser("abc");
 blog_comment.setCid(2);
-blog_comment.setCdate( new java.util.Date().getTime());
+//blog_comment.setCdate( new java.util.Date().getTime());
 blog_comment.setCmnt("good");
 blogCommentDao.SaveOrUpdate(blog_comment);
 System.out.println("inserteddddddddddddddd");

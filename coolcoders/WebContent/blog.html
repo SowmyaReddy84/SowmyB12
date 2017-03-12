@@ -67,66 +67,71 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="container" ng-show="isSelected('btb')">
 
-      <div class="row">
+      <div class="row" ng-repeat="blg in blogs" ng-class="{ 'reset-s' : $index%3==0 }" ng-click="selectTab(blg.bid)">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
           <div class="post-preview">
-            <a href="nature.html">
+            <a href="#">
               <h2 class="post-title">
-                Wherever you go, no matter what the weather, always bring your own sunshine.
+                <!-- Wherever you go, no matter what the weather, always bring your own sunshine. -->
+                {{blg.bdesc}}
               </h2>
-              <img class="img-responsive img-circle" src="resources/img/nature.jpg" alt="blog" style="height:250px;width:250px;""><br>
+<!--                <img class="img-responsive img-circle" src="resources/img/bid.jpg" alt="blog" style="height:250px;width:250px;""><br> -->
+              <center>
+              <img class="img-responsive img-circle" src="resources/img/{{blg.bid}}.jpg" alt="blog" style="height:350px;width:350px;""><br> 
+              </center>
               <h3 class="post-subtitle">
-                Nature, in the broadest sense, is the natural, physical, or material world or universe.
+<!--                 Nature, in the broadest sense, is the natural, physical, or material world or universe. -->
+					{{blg.bdeta}}
               </h3>
             </a>
             <p class="post-detail">Posted by <a href="#">Cool Coders</a> on Feb 26, 2017</p>
           </div>
           <hr>
 
-          <div class="post-preview">
-            <a href="edu.html">
-              <h2 class="post-title">
-                Education is the key to unlock the golden door of freedom.
-              </h2>
-              <img class="img-responsive img-circle" src="resources/img/educat.jpg" alt="blog" style="height:250px;width:250px;""><br>
-               <h3 class="post-subtitle">
-              Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits.
-              </h3>
-            </a>
-            <p class="post-detail">Posted by <a href="#">Cool Coders</a> on March 5, 2017</p>
-          </div>
-          <hr>
+<!--           <div class="post-preview"> -->
+<!--             <a href="edu.html"> -->
+<!--               <h2 class="post-title"> -->
+<!--                 Education is the key to unlock the golden door of freedom. -->
+<!--               </h2> -->
+<!--               <img class="img-responsive img-circle" src="resources/img/educat.jpg" alt="blog" style="height:250px;width:250px;""><br> -->
+<!--                <h3 class="post-subtitle"> -->
+<!--               Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. -->
+<!--               </h3> -->
+<!--             </a> -->
+<!--             <p class="post-detail">Posted by <a href="#">Cool Coders</a> on March 5, 2017</p> -->
+<!--           </div> -->
+<!--           <hr> -->
 
-          <div class="post-preview">
-            <a href="frnds.html">
-              <h2 class="post-title">
-             The greatest healing therapy is friendship and love.
-              </h2>
-              <img class="img-responsive img-circle" src="resources/img/friends.jpg" alt="blog" style="height:250px;width:250px;""><br>
-              <h3 class="post-subtitle">
-              Friendship is a relationship of mutual affection between people.Friendship is a stronger form of interpersonal bond than an association.
-              </h3>
-            </a>
-            <p class="post-detail">Posted by <a href="#">Cool Coders</a> on March 8, 2016</p>
-          </div>
-          <hr>
+<!--           <div class="post-preview"> -->
+<!--             <a href="frnds.html"> -->
+<!--               <h2 class="post-title"> -->
+<!--              The greatest healing therapy is friendship and love. -->
+<!--               </h2> -->
+<!--               <img class="img-responsive img-circle" src="resources/img/friends.jpg" alt="blog" style="height:250px;width:250px;""><br> -->
+<!--               <h3 class="post-subtitle"> -->
+<!--               Friendship is a relationship of mutual affection between people.Friendship is a stronger form of interpersonal bond than an association. -->
+<!--               </h3> -->
+<!--             </a> -->
+<!--             <p class="post-detail">Posted by <a href="#">Cool Coders</a> on March 8, 2016</p> -->
+<!--           </div> -->
+<!--           <hr> -->
 
-          <div class="post-preview">
-            <a href="tech.html">
-              <h2 class="post-title">
-               Technology is a useful servant but a dangerous master. 
-              </h2>
-              <img class="img-responsive img-circle" src="resources/img/tech1.jpg" alt="blog" style="height:250px;width:250px;""><br>
-              <h3 class="post-subtitle">
-                Technology can be viewed as an activity that forms or changes culture. Additionally, technology is the application of math, science, and the arts for the benefit of ...
-              </h3>
-            </a>
-            <p class="post-detail">Posted by <a href="#">Cool Coders</a> on Feb 24, 2016</p>
-          </div>
-          <hr>
+<!--           <div class="post-preview"> -->
+<!--             <a href="tech.html"> -->
+<!--               <h2 class="post-title"> -->
+<!--                Technology is a useful servant but a dangerous master.  -->
+<!--               </h2> -->
+<!--               <img class="img-responsive img-circle" src="resources/img/tech1.jpg" alt="blog" style="height:250px;width:250px;""><br> -->
+<!--               <h3 class="post-subtitle"> -->
+<!--                 Technology can be viewed as an activity that forms or changes culture. Additionally, technology is the application of math, science, and the arts for the benefit of ... -->
+<!--               </h3> -->
+<!--             </a> -->
+<!--             <p class="post-detail">Posted by <a href="#">Cool Coders</a> on Feb 24, 2016</p> -->
+<!--           </div> -->
+<!--           <hr> -->
 
           <!-- Use a pager instead of a button -->
           <!--Take out once you sort out Pager -->
@@ -137,6 +142,9 @@
     	    </div> -->
 
           <!-- Read up how Pager works-->
+          </div>
+          </div>
+          
           <ul class="pager">
             <li class="next">
               <a href="#">OLDER POSTS &rarr;</a>
@@ -144,8 +152,8 @@
           </ul>
 	        <hr>
         </div>
-      </div>
-</div>
+     
+
     <footer>
       <div class="social">
 
@@ -176,6 +184,10 @@
     <script>
       $('a.btn-info').tooltip()
     </script>
+    <script src="js/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/blog_controller.js"></script>
+    <script src="js/blog_service.js"></script>
 
   </body>
 
