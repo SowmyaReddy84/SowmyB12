@@ -31,12 +31,12 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     $scope.doLogin=function(users)
     {	
     	console.log('DoneA');
-    	 console.log(users.id);
+    	 console.log(users.loginid);
     	UserService.doLogin(users)
         .then(
         		function (response) {
                 	alert("You are authorised");
-        			console.log('doneD',users.id);
+        			console.log('doneD',users.loginid);
         			
         			 window.location = "home.html";
                 },

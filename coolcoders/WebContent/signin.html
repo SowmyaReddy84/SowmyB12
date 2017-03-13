@@ -5,6 +5,14 @@
 <title>COOLCODERS/Signin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" text="text/css" href="css/bootstrap.min.css" >
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- css -->
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
@@ -16,31 +24,39 @@
 
 </script>
 </head>
-<body ng-app="myApp" ng-controller="UserController">
+<body>
 <div class="container">
  <div class="col-md-8">
-	<div id="login-box" ng-submit="doLogin(users)">
+	<div id="login-box" >
 		<div class="logo">
 			<img src="resources/img/login1.png" class="img img-responsive img-circle center-block" height="120" width="120"/>
 			<h1 class="logo-caption"><span class="tweak"><strong>L</strong></span><strong>ogin</strong></h1>
 		</div><!-- /.logo -->
 		<div class="controls">
-			<input type="text" name="username" ng-model="users.id" placeholder="Username" class="form-control" />
-			<input type="text" name="password" ng-model="users.pwd" placeholder="Password" class="form-control" /><br>
-			<a href="home.html" class="btn btn-primary btn-block btn-md">signin</a>
+			<input type="text" name="username"  placeholder="Username" class="form-control" />
+			<input type="password" name="password"  placeholder="Password" class="form-control" /><br>
+				 <a href="home.html" class="btn btn-success btn-block btn-sm" role="button">sign in</a>			
+				 <button class="btn btn-warning btn-block btn-md">Cancel</button>
+			
+			
 		</div><!-- /.controls -->
 	</div><!-- /#login-box -->
 	</div>
-	<div class="register" style="color:white;">
-	 <div class="col-md-4" >
+	
+	 <div class="col-md-4" style="color:white;" >
 	 <h2>If you aren't registered</h2>
 	 <h4>Register,more to see!</h4>
 	 <a href="register.html" class="btn btn-success" role="button">COMMENT</a>
 	 
 	 
 	 </div>
-	 </div>
+	
 </div><!-- /.container -->
 <div id="particles-js"></div>
+
+    <script src="js/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/user_controller.js"></script>
+    <script src="js/user_service.js"></script>
 </body>
 </html>

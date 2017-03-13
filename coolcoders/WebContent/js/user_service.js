@@ -8,12 +8,12 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
         regiUser: regiUser,
         doLogin:doLogin
      };
-    var nam="id";
+    var nam="loginid";
     return factory;
 
     function fetchAllUsers() {
         var deferred = $q.defer();
-        $http.get('http://localhost:8081/coolcodersbackend/users/?id="id"')
+        $http.get('http://localhost:8081/CoolCodersBackend/users/?loginid="loginid"')
             .then(
             function (response) {
             	console.log('Got data');
@@ -30,7 +30,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
         var deferred = $q.defer();
         console.log('Done B');
 //        $http.post('http://localhost:8080/CodersBench/user/insert/',{user: u})
-        $http.post('http://localhost:8081/coolcodersbackend/users/insert/',users)
+        $http.post('http://localhost:8081/CoolCodersBackend/users/insert/',users)
             .then(
             		
             function (response) {
@@ -47,7 +47,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
     function doLogin(users) {
         var deferred = $q.defer();
         console.log('Done B');
-        $http.get('http://localhost:8081/coolcodersbackend/users/dologs/'+users.id+'/'+users.usrpwd)
+        $http.get('http://localhost:8081/CoolCodersBackend/users/dologs/'+users.loginid+'/'+users.usrpwd)
       
             .then(
             		
