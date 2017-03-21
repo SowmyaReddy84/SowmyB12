@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import com.niit.coolcodersbackend.dao.Forum_ResponseDao;
 import com.niit.coolcodersbackend.model.Forum_Response;
 
@@ -48,8 +49,8 @@ public void SaveOrUpdate(Forum_Response rpl) {
 }
 
 
-public Forum_Response getFrmById(int rid) {
-	String hql = "from Forum_Response where rid=" + rid;
+public Forum_Response getFrmById(int fid) {
+	String hql = "from Forum_Response where fid=" + fid;
 	Query query = sessionFactory.getCurrentSession().createQuery(hql);
 	
 	@SuppressWarnings("unchecked")
@@ -62,6 +63,20 @@ public Forum_Response getFrmById(int rid) {
 	return null;
 }
 
+
+@Transactional
+public List<Forum_Response> getRpls(int id) {
+	String hql = "from Forum_Response where fid=" + id;
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+	
+	@SuppressWarnings("unchecked")
+	List<Forum_Response> listRpl = (List<Forum_Response>) query.list();
+	
+	if (listRpl != null && !listRpl.isEmpty()) {
+		return listRpl;
+	}
+	return null;
+}
 
 
 	

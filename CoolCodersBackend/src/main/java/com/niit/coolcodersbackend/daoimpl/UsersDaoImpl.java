@@ -57,4 +57,26 @@ public class UsersDaoImpl implements UsersDao {
 		
 	}
 
+public Users getuserByName(String name) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Transactional
+public Users getUsr(String name, String password) {
+	System.out.println("asfaaaadada "+name);
+	String hql = "from Users where name= '" + name + "' and " + " password ='" + password+"'";
+	System.out.println(name+password);
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+	
+	@SuppressWarnings("unchecked")
+	List<Users> listUsrs = (List<Users>) query.list();
+	
+	if (listUsrs != null && !listUsrs.isEmpty()) {
+		return listUsrs.get(0);
+	}
+	
+	return null;
+}
+
 }

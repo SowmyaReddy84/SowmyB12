@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 public class Blog_Master {
 @Id
-
+@GeneratedValue
 private int bid;
 private String btitle;
 private String bdesc;
@@ -25,7 +25,6 @@ private String buser;
 private String bdeta;
 private int bcmnt;
 private int blike;
-private String blog_image;
 
 
 public Blog_Master() {
@@ -97,13 +96,6 @@ public int getBlike() {
 public void setBlike(int blike) {
 	this.blike = blike;
 }
-public String getBlog_image() {
-	return blog_image;
-}
-public void setBlog_image(String blog_image) {
-	this.blog_image = blog_image;
-}
-
 
 
 

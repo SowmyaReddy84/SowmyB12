@@ -8,23 +8,23 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 	
 	@RequestMapping("/")
-	public ModelAndView getindex()
+	public ModelAndView getIndex()
 	{
 		ModelAndView mv = new ModelAndView("index");
 		return mv;
 	}
 	
 	@RequestMapping("signin")
-	public ModelAndView getsignin()
+	public ModelAndView getSignin()
 	{
 	ModelAndView mv= new ModelAndView("signin");
 	return mv;
 	}
 	
-	@RequestMapping("signup")
-	public ModelAndView getsignup()
+	@RequestMapping("register")
+	public ModelAndView getRegister()
 	{
-	ModelAndView mv = new ModelAndView("signup");
+	ModelAndView mv = new ModelAndView("register");
 	return mv;
 	}
 

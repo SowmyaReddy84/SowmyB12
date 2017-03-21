@@ -8,11 +8,12 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 public class Users {
+	
 	@Id
 	private int id;
-	private String loginid;
-	private String usrname;
-	private String usrpwd;
+	private String Loginid;
+	private String Name;
+	private String password;
 	public int getId() {
 		return id;
 	}
@@ -20,24 +21,22 @@ public class Users {
 		this.id = id;
 	}
 	public String getLoginid() {
-		return loginid;
+		return Loginid;
 	}
 	public void setLoginid(String loginid) {
-		this.loginid = loginid;
+		Loginid = loginid;
 	}
-	public String getUsrname() {
-		return usrname;
+	public String getName() {
+		return Name;
 	}
-	public void setUsrname(String usrname) {
-		this.usrname = usrname;
+	public void setName(String name) {
+		Name = name;
 	}
-	public String getUsrpwd() {
-		return usrpwd;
+	public String getPassword() {
+		return password;
 	}
-	public void setUsrpwd(String usrpwd) {
-		this.usrpwd = usrpwd;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	
-	
 
 }

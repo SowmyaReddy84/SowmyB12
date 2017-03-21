@@ -17,14 +17,17 @@ public class Blog_MasterTest {
 	
 		Blog_MasterDao blog_masterDao = (Blog_MasterDao) ctx.getBean("blog_masterDao");
 		Blog_Master blog_master = (Blog_Master) ctx.getBean("blog_master");
-		blog_master.setBid(3);
-	    blog_master.setBtitle("friends");
-		blog_master.setBuser("chintu");
+		
+		
+	    blog_master.setBtitle("MachinLearning");
+		blog_master.setBuser("ss");
 		blog_master.setBlike(4);
-		blog_master.setBdesc("The greatest healing therapy is friendship and love." );
-		blog_master.setBlog_image("bid.jpg");
+		blog_master.setBdesc("HTML Stands for Hyper Text Markup Language." );
+		blog_master.setBimg(null);
 		blog_master.setBdata("Nature, in the broadest sense, is the natural, physical, or material world or universe. Nature can refer to the phenomena of the physical world, and also to life in general. The study of nature is a large part of science. Although humans are part of nature, human activity is often understood as a separate category from other natural phenomena");
-
+		blog_master.setBcmnt(19);
+		
+		
 		
 		blog_masterDao.SaveOrUpdate(blog_master);
 		

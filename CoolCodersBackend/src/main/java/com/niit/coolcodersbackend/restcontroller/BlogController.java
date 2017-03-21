@@ -53,11 +53,12 @@ public class BlogController {
 	 
 	 @RequestMapping(value = "/blog/insert/", method = RequestMethod.POST )
 	    public ResponseEntity<Void> createUser(@ModelAttribute("blogm") Blog_Master blog_master, @RequestBody Blog_Master blogMaster,   UriComponentsBuilder ucBuilder) {
-	           System.out.println("Done Here Blog Storing ");
+	           System.out.println("Done Here Blog Storing "+blogMaster.getBtitle());
+//	           System.out.println("Done Here Blog Storing "+blog_master.getBtitle());
 	           
 	           try{
-	        blog_masterDao.SaveOrUpdate(blog_master);
-	        System.out.println("3333333333333333333333333333333"+blog_master.getBtitle());
+	        blog_masterDao.SaveOrUpdate(blogMaster);
+	        System.out.println("3333333333333333333333333333333"+blogMaster.getBtitle());
 	           }catch(Exception e){System.out.println("EXPTION......"+e.toString());}
 	        HttpHeaders headers = new HttpHeaders();
 	        headers.setLocation(ucBuilder.path("/users/{id}").buildAndExpand(blogMaster.getBid()).toUri());
@@ -71,8 +72,9 @@ public class BlogController {
 	 
 	 @RequestMapping(value = "/coments/{bid}", method = RequestMethod.GET)
 	    public ResponseEntity<List<Blog_Comment>> listAllComents(@PathVariable("bid") int bid) {
-	     System.out.println(bid);   
-		 List<Blog_Comment> cmtlst = blog_commentDao.getAllCmnts();
+	     System.out.println(bid); 
+	     
+		 List<Blog_Comment> cmtlst = blog_commentDao.getCmts(bid);
 	        
 	        if(cmtlst.isEmpty()){
 	            return new ResponseEntity<List<Blog_Comment>>(HttpStatus.NO_CONTENT);
@@ -84,12 +86,14 @@ public class BlogController {
 	 @RequestMapping(value = "/cmnt/insert/", method = RequestMethod.POST )
 	    public ResponseEntity<Void> createUser(@ModelAttribute("comment") Blog_Comment blog_comment, @RequestBody Blog_Comment comment,   UriComponentsBuilder ucBuilder) {
 	           System.out.println("Done Here commect Storing ");
+	           System.out.println("Done Here comment Storing "+comment.getCmt());
+
 	           
 
 	        blog_commentDao.SaveOrUpdate(comment);
 	 
 	        HttpHeaders headers = new HttpHeaders();
-	        headers.setLocation(ucBuilder.path("/users/{id}").buildAndExpand(comment.getBid()).toUri());
+	        headers.setLocation(ucBuilder.path("/users/{id}").buildAndExpand(comment.getCmt()).toUri());
 	        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	    }
 

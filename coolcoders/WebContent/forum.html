@@ -10,6 +10,8 @@
 <!-- Load Bootstrap Files -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" href="css/blog.css">
+
 
 <!--load font awesome-->
 <link rel="stylesheet"
@@ -19,7 +21,7 @@
 </style>
 </head>
 
-<body>
+<body ng-app="myApp"  ng-controller="ForumController">
 
 	<!-- nav bar -->
 	<nav class="navbar navbar-default navbar-custom" role="navigation">
@@ -39,9 +41,9 @@
 			<!-- Nav Links for Toggling -->
 			<div class="collapse navbar-collapse" id="example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">ADD NEW BLOG</a></li>
-					<li><a href="#">BACK</a></li>
-					<li><a href="#">SIGN OUT</a></li>
+					<li><a href="#" ng-click="selectTab('fnew')">ADD NEW POST</a></li>
+					<li><a href="home.html">BACK</a></li>
+					<li><a href="index.html">SIGN OUT</a></li>
 
 				</ul>
 			</div>
@@ -74,7 +76,7 @@
 
 
 
-	<div id="bottomnext">
+	<div id="bottomnext" style="background-color:#DBE9F4;">
 		<table align="right" style="margin-right:25px;">
 			<tr>
 				<td><a id="next" href="asknewquestion.html">Ask New Question</a></td>
@@ -99,42 +101,165 @@
 	</table>
 
 
+				<div class="content">
+        <div class="container">
+          <div class="row">
+            <ul class="post-grid spacing" ng-show="isSelected('ftb')">
+          <li ng-repeat="cfrm in forumms" class="col-s-12" ng-class="{ 'reset-s' : $index%3==0 }" ng-click="selectTab(cfrm.fid)" >
+            <h3>{{cfrm.fid}} &nbsp;{{cfrm.ftitle}}</h3>
+  
 
+&nbsp; <h4><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{cfrm.fcmnt}} &nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> {{cfrm.flike}}</h4>
+           
+            <hr>
+          </li>
+        </ul>
+   <!-- -----------------------------describing forum---------------------- -->
+        <div class="post" ng-repeat="cfrm in forumms" ng-show="isSelected(cfrm.fid)">
+          <div >
+             <h3>Forum Id:{{cfrm.fid}}</h3>
+            <h3>Forum Title:{{cfrm.ftitle}}</h3>
+           
+           <div class="post-body">
+             <h4>
+               Forum Description:{{cfrm.fdy}}</h4>
+               </div>
+         <b>   <h5>by</h5></b>
+         <b>  User Id&nbsp;:&nbsp;{{cfrm.fid}}</b><br><br><b> Name&nbsp;:&nbsp;{{cfrm.fuser}} &nbsp; &nbsp;On &nbsp; &nbsp; {{cfrm.fpstdate | date}}</b></h5><br><br>
+            <div class="post-body">
+             <p ng-repeat="paragraph in cfrm.fdy">
+               {{paragraph}}
+             </p> 
+            </div>
+          
+            
+            
+            <div class="comments">
+            <div ></div>
+              <span class="fa fa-heart" ng-click="updateLik(cfrm.flike = cfrm.flike+1,cfrm.fid,cfrm)">&nbsp;{{cfrm.flike}}&nbsp;</span>
+             
+              <h3>Replies</h3>
+              <ul>
+               <li ng-repeat="repl in repls">
+                 "{{repl.rpl}}"
+                 <cite>-<a> <b>{{repl.fuser}}</b></a></cite>
+               </li>
+              </ul>
+              <hr>
+              <form name="commentForm" ng-submit="commentForm.$valid && addRpl(reply,cfrm.fid,cfrm)" novalidate>
+               <h4>Add Comment</h4>
+                  <textarea ng-model="reply.rpl" cols="100" rows="10" required></textarea><br><br>
+                <label for="">by:</label>
+                &nbsp;&nbsp; &nbsp;&nbsp; <input type="text" ng-model="reply.fuser" required placeholder="Name"/><br><br>
+                  
+              &nbsp;&nbsp; &nbsp;&nbsp;   <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+        
+      </div>
+ 
+        <div class="post" ng-show="isSelected('fnew')">
+          <h2>Add New Post</h2>
+          
+         
+          <form name="postForms" ng-submit=" addForum(forumm)" novalidate>
+                  <h4>Forum ID</h4>
+                  <input type="text" ng-model="forumm.fid"/>
+                  <h4>Title</h4>
+                  <input type="text" ng-model="forumm.ftitle"/>
+                  <h4>Body</h4>
+                  <textarea ng-model="forumm.fdy" rows="10" cols="100"></textarea><br><br><br>
+                  
+                  <label for="">by:</label>
+                  <input type="text" ng-model="forumm.fuser" placeholder="Author Name" required/><br><br>
+                  
+              &nbsp;  &nbsp; &nbsp;    <input type="submit" value="Submit" />
+                </form>
+          
+            </div>
+            
+         </div>
+      </div>
+      </div>
+      
+<footer style="background-color:grey;">
+		<div class="social">
 
+			<ul>
+				<li><a href="#"><i class="fa fa-xl fa-twitter"></i></a></li>
 
-	<div id='getgeninfo'>
-		<table style='table-layout: fixed' id='forumquestions' 
-			bordercolor='pink' cellpadding='5' width='100%'>
-			<tr>
-				<th width='7%'>Thread</th>
-				<th width='32%'>Question</th>
-				<th width='29%'>By</th>
-				<th>Total Answers</th>
-				<th width='25%'>Posted Date</th>
-			</tr>
-			<tr>
-			<td colspan="5"><marquee behavior="scroll" direction="right" scrollamount="6" style=color:#008080;"><b>HTML QUESTIONS</b></marquee>
-			</td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td><a href='q/11713'><b>how can capture image on web
-							cam stored in MYSQL DB using jsp and servlet</b></a></td>
-				<td>rajtangde001@rediffmail.com</td>
-				<td>0</td>
-				<td>Thu Mar 09 12:50:47 IST 2017</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td><a href='q/11712'><b>what is static and dynamic
-							query?</b></a></td>
-				<td>ravichandola94@gmail.com</td>
-				<td>0</td>
-				<td>Thu Mar 09 02:14:49 IST 2017</td>
-			</tr>
-			</table>
-			</div>
-			
+				<li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+
+				<li><a href="#"><i class="fa fa-lg fa-github"></i></a></li>
+			</ul>
+
+			<p id="foot" style="color:white">Copyright &copy; Cool Coders 2016</p>
+
+		</div>
+	</footer>
+
+  <script src="js/angular/angular.js"></script>
+  
+    <script src="js/app.js"></script>
+    <script src="js/forum_controller.js"></script>
+    <script src="js/forum_service.js"></script>
 </body>
 </html>
+
+
+<!-- 	<div id='getgeninfo' ng-show="isSelected('ftb')"> -->
+<!-- 		<table style='table-layout: fixed' id='forumquestions'  -->
+<!-- 			bordercolor='pink' cellpadding='5' width='100%'> -->
+<!-- 			<tr> -->
+<!-- 				<th width='7%'>Thread</th> -->
+<!-- 				<th width='32%'>Question</th> -->
+<!-- 				<th width='29%'>By</th> -->
+<!-- 				<th>Total Answers</th> -->
+<!-- 				<th width='25%'>Posted Date</th> -->
+<!-- 			</tr> -->
+<!-- 			<tr> -->
+<!-- 			<td colspan="5"><marquee behavior="scroll" direction="right" scrollamount="6" style=color:#008080;"><b>HTML QUESTIONS</b></marquee> -->
+<!-- 			</td> -->
+<!-- 			</tr> -->
+<!-- 			<tr> -->
+<!-- 				<td>1</td> -->
+<!-- 				<td><a href='q/11713'><b>how can capture image on web -->
+<!-- 							cam stored in MYSQL DB using jsp and servlet</b></a></td> -->
+<!-- 				<td>rajtangde001@rediffmail.com</td> -->
+<!-- 				<td>0</td> -->
+<!-- 				<td>Thu Mar 09 12:50:47 IST 2017</td> -->
+<!-- 			</tr> -->
+<!-- 			<tr> -->
+<!-- 				<td>2</td> -->
+<!-- 				<td><a href='q/11712'><b>what is static and dynamic -->
+<!-- 							query?</b></a></td> -->
+<!-- 				<td>ravichandola94@gmail.com</td> -->
+<!-- 				<td>0</td> -->
+<!-- 				<td>Thu Mar 09 02:14:49 IST 2017</td> -->
+<!-- 			</tr> -->
+<!-- 			<tr> -->
+<!-- 			<td colspan="5"><marquee behavior="scroll" direction="right" scrollamount="6" style=color:red;"><b>Java Questions</b></marquee> -->
+<!-- 			</td> -->
+<!-- 			</tr> -->
+<!-- 				<tr> -->
+<!-- 				<td>1</td> -->
+<!-- 				<td><a href='q/11713'><b>how can capture image on web -->
+<!-- 							cam stored in MYSQL DB using jsp and servlet</b></a></td> -->
+<!-- 				<td>rajtangde001@rediffmail.com</td> -->
+<!-- 				<td>0</td> -->
+<!-- 				<td>Thu Mar 09 12:50:47 IST 2017</td> -->
+<!-- 			</tr> -->
+<!-- 				<tr> -->
+<!-- 				<td>1</td> -->
+<!-- 				<td><a href='q/11713'><b>how can capture image on web -->
+<!-- 							cam stored in MYSQL DB using jsp and servlet</b></a></td> -->
+<!-- 				<td>rajtangde001@rediffmail.com</td> -->
+<!-- 				<td>0</td> -->
+<!-- 				<td>Thu Mar 09 12:50:47 IST 2017</td> -->
+<!-- 			</tr> -->
+<!-- 			</table> -->
+<!-- 			</div> -->
+			
+
 

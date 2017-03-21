@@ -50,7 +50,7 @@ public class Blog_MasterDaoImpl implements Blog_MasterDao {
 	}
 	@Transactional
 	public Blog_Master getBlog(int id) {
-		String hql = "from blogmaster where bbid=" + id;
+		String hql = "from blogmaster where bid=" + id;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")

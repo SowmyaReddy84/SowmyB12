@@ -4,59 +4,77 @@
 <meta charset="ISO-8859-1">
 <title>COOLCODERS/Signin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" text="text/css" href="css/bootstrap.min.css" >
+<link rel="stylesheet" text="text/css" href="css/bootstrap.min.css">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <!-- css -->
-<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link
+	href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700'
+	rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/sign and register.css" />
-    
+
 <!-- js -->
 <!-- <script src="/js/signin.js"></script> -->
 <script>
-
+	
 </script>
 </head>
-<body>
-<div class="container">
- <div class="col-md-8">
-	<div id="login-box" >
-		<div class="logo">
-			<img src="resources/img/login1.png" class="img img-responsive img-circle center-block" height="120" width="120"/>
-			<h1 class="logo-caption"><span class="tweak"><strong>L</strong></span><strong>ogin</strong></h1>
-		</div><!-- /.logo -->
-		<div class="controls">
-			<input type="text" name="username"  placeholder="Username" class="form-control" />
-			<input type="password" name="password"  placeholder="Password" class="form-control" /><br>
-				 <a href="home.html" class="btn btn-success btn-block btn-sm" role="button">sign in</a>			
-				 <button class="btn btn-warning btn-block btn-md">Cancel</button>
-			
-			
-		</div><!-- /.controls -->
-	</div><!-- /#login-box -->
-	</div>
-	
-	 <div class="col-md-4" style="color:white;" >
-	 <h2>If you aren't registered</h2>
-	 <h4>Register,more to see!</h4>
-	 <a href="register.html" class="btn btn-success" role="button">COMMENT</a>
-	 
-	 
-	 </div>
-	
-</div><!-- /.container -->
-<div id="particles-js"></div>
+<body ng-app="myApp" ng-controller="UserController">
+	<div class="container">
+		<div class="col-md-8">
+			<div id="login-box">
+				<div class="logo">
+					<img src="resources/img/login1.png"
+						class="img img-responsive img-circle center-block" height="120"
+						width="120" />
+					<h1 class="logo-caption">
+						<span class="tweak"><strong>L</strong></span><strong>ogin</strong>
+					</h1>
+				</div>
+				<!-- /.logo -->
+				<form ng-submit="doLogin(users)" >
+				<div class="controls">
+					<input type="text" name="username" ng-model="users.name"
+						placeholder="Username" class="form-control" /> 
+				    <input type="password" name="password" ng-model="users.password" 
+						placeholder="Password" class="form-control" /><br>
+					<button type="submit" class="btn btn-warning btn-block btn-md">Submit</button>
+					<a href="home.html" class="btn btn-success btn-block btn-sm"
+						role="button">Cancel</a>
+				</div>
+				</form>	
+				<!-- /.controls -->
+			</div>
+			<!-- /#login-box -->
+		</div>
+		<script src="js/angular/angular.js"></script>
 
-    <script src="js/angular/angular.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/user_controller.js"></script>
-    <script src="js/user_service.js"></script>
+
+		<script src="js/app.js"></script>
+		<script src="js/user_controller.js"></script>
+		<script src="js/user_service.js"></script>
+		<div class="col-md-4" style="color: white;">
+			<h2>If you aren't registered</h2>
+			<h4>Register,more to see!</h4>
+			<a href="register.html" class="btn btn-success  btn-md"
+				role="button">REGISTER</a>
+
+
+		</div>
+	</div>
+
+
+	
+	<!-- /.container -->
+
+
 </body>
 </html>

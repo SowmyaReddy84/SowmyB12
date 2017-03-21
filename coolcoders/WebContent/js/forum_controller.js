@@ -2,10 +2,10 @@
 
 angular.module('myApp').controller('ForumController', ['$scope', 'ForumService', function($scope, ForumService) {
    
-	$scope.forumm={fid:'',fcmtct:'',fdy:'',flikct:'',fpostdat:null,fsec:'',ftitle:'',fusr:'',fimg:null};
+	$scope.forumm={fid:'',fcmnt:'',fdy:'',fliket:'',fpstdate:null,fsec:'',ftitle:'',fuser:'',fimg:null};
     $scope.forumms=[];
 	
-    $scope.reply={rid:'',fid:'', rpl:'',fusr:'',rdt:''};
+    $scope.reply={rid:'',fid:'', rpl:'',fuser:'',rdate:'',floginid:''};
     $scope.repls=[];
    
     fetchAllForums();
@@ -96,7 +96,7 @@ $scope.selectTab = function(setTab){
   $scope.updateLik = function(x,y,forumm){
 		
 	      console.log(x,"JKKJK JK JKJK KJ KJKJ")
-	      forumm.flikct=x;
+	      forumm.fliket=x;
 	      forumm.fid=y;
 	      
 	    ForumService.addForum(forumm);

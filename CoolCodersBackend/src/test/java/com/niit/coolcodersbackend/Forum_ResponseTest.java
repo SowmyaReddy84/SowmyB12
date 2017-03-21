@@ -20,12 +20,11 @@ public static void main(String[] args) {
 	System.out.println("doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 	Forum_Response forum_response=(Forum_Response) ctx.getBean("forum_response");
 	System.out.println("22222222222222222222222222222222222222222");
+forum_response.setFloginid("ssss");
+forum_response.setRdate(null);
 forum_response.setFid(1);
-forum_response.setFloginid("abc");
-forum_response.setFuser("abc");
-forum_response.setRid(2);
-forum_response.setRpl("nice");
-	
+forum_response.setRpl("jehdj hebdsnd");
+forum_response.setFuser("sssssss");
 	forum_reponseDao.SaveOrUpdate(forum_response);// to insert
 ////	forum_reponseDao.delForum_Respone(100);// to delete
 ////	forum_response=forum_reponseDao.getFrm(1);

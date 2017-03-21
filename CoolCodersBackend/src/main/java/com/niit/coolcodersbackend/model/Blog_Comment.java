@@ -1,40 +1,34 @@
 package com.niit.coolcodersbackend.model;
 
-import java.sql.Date;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import org.springframework.stereotype.Component;
-
-import oracle.sql.DATE;
 
 @Entity
 @Component
 public class Blog_Comment {
 
 	@Id
-	
+	@GeneratedValue
 	private int cid;
 	private int bid;
-	private String cmnt;
-	private String buser;
-	private DATE cdate;
+	private String cmt;
+	private String busr;
+	private String cdat;
 	
-	
-
-
 	public Blog_Comment() {
 		
 	}
 
 
-	public Blog_Comment(int cid, int bid, String cmnt, String buser, DATE cdate) {
+	public Blog_Comment(int cid, int bid, String cmt, String busr, String cdat) {
 		
 		this.cid = cid;
 		this.bid = bid;
-		this.cmnt = cmnt;
-		this.buser = buser;
-		this.cdate = cdate;
+		this.cmt = cmt;
+		this.busr = busr;
+		this.cdat = cdat;
 	}
 	
 	
@@ -54,33 +48,29 @@ public class Blog_Comment {
 		this.bid = bid;
 	}
 
-	public String getCmnt() {
-		return cmnt;
+	public String getCmt() {
+		return cmt;
 	}
 
-	public void setCmnt(String cmnt) {
-		this.cmnt = cmnt;
+	public void setCmt(String cmt) {
+		this.cmt = cmt;
 	}
 
-	public String getBuser() {
-		return buser;
+	public String getBusr() {
+		return busr;
 	}
 
-	public void setBuser(String buser) {
-		this.buser = buser;
+	public void setBusr(String busr) {
+		this.busr = busr;
 	}
 
-
-	public DATE getCdate() {
-		return cdate;
+	public String getCdat() {
+		return cdat;
 	}
 
-
-	public void setCdate(DATE cdate) {
-		this.cdate = cdate;
+	public void setCdat(String cdat) {
+		this.cdat = cdat;
 	}
-
-
 
 	
 }

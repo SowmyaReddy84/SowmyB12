@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class Forum_Master 
 {
 	@Id
-	
+	@GeneratedValue
 	private int fid;
 	private String ftitle;
 	private String fdy;
@@ -25,7 +25,7 @@ public class Forum_Master
 	private String fuser;
 	private String fsec;
 	private int fcmnt;
-	private int fliket;
+	private int flike;
 	public int getFid() {
 		return fid;
 	}
@@ -75,11 +75,11 @@ public class Forum_Master
 	public void setFcmnt(int fcmnt) {
 		this.fcmnt = fcmnt;
 	}
-	public int getFliket() {
-		return fliket;
+	public int getFlike() {
+		return flike;
 	}
-	public void setFliket(int fliket) {
-		this.fliket = fliket;
+	public void setFlike(int flike) {
+		this.flike = flike;
 	}
 	
 

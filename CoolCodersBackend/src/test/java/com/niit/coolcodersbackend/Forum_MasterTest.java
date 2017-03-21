@@ -20,14 +20,13 @@ public static void main(String[] args) {
 	System.out.println("doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 	Forum_Master forum_master=(Forum_Master) ctx.getBean("forum_master");
 	System.out.println("22222222222222222222222222222222222222222");
-	forum_master.setFid(10);
 	forum_master.setFcmnt(10);
-	forum_master.setFdy("bdvhjdkjbjk jvkdhbj bhdf");
-	forum_master.setFliket(5);
+	forum_master.setFdy("asd hdfsd hdjd jkfdn fjfnv");
+	forum_master.setFlike(6);
 	forum_master.setFpstdate(null);
-	forum_master.setFsec("Education");
-	forum_master.setFtitle("HTML");
-	forum_master.setFuser("sweety");
+	forum_master.setFsec("games");
+	forum_master.setFtitle(" dfjg jfv");
+	forum_master.setFuser("safd");
 forum_masterDao.SaveOrUpdate(forum_master);
 	// to insert
 	//forum_masterDao.delForum_Master(10);// to delete

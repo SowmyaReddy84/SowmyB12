@@ -19,22 +19,30 @@ public class UsersTest {
 		Users users =(Users) context.getBean("users");
 		System.out.println("Done11111111111111111111111111111111111");
 		///inserting the records******
-		users.setId(2);
-		users.setLoginid("sweety");
-		users.setUsrname("sweety");
-		users.setUsrpwd("sweety");
-		usersDao.insertOrUpdate(users);
-		System.out.println("insertedddddddddddddddddddd");
+//		
 		///for listing the records
-//		 List<Users> lstUsers = usersDao.getAllUsersList();
-//		 System.out.println(lstUsers.size());
+		 List<Users> lstUsers = usersDao.getAllUsersList();
+		 System.out.println(lstUsers.size());
 		////to the fetch the data by id
 //		users=usersDao.getById(1);
-//			System.out.println(users.getLoginid()+" "+users.getUsrname());
+//			System.out.println(users.getLoginid()+" "+users.getName());
 		///to delete data by id
 //		usersDao.delUsersById(1);
 //		System.out.println("deletedddddddddddddd");
-		
+//		boolean  ss =usersDao.getUsr("ss","ss");
+//		if(ss)
+//			System.out.println("found");
+//		else
+//			System.out.println("not found");
+////		
+		 users=usersDao.getUsr("ss", "ss");
+		 System.out.println(users.getLoginid()+" "+users.getName());
+		 
+//		users.setId(3);
+//		users.setLoginid("sweety@gmail.com");
+//		users.setName("sweety");
+//		users.setPassword("sweety");
+//		usersDao.insertOrUpdate(users);
 //		
 	}
 }

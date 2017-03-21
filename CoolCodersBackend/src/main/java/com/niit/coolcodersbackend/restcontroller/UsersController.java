@@ -41,12 +41,12 @@ public ResponseEntity<List<Users>> list() {
 }
 
 //---------------------------------------------FETCH ONE USER--------------------------------------------------
-@RequestMapping(value = "/users/dologs/{id}/{pwd}", method = RequestMethod.GET)
-public ResponseEntity<Users> getUser(@PathVariable("id") int id,@PathVariable("pwd") String pwd) {
+@RequestMapping(value = "/users/dologs/{name}/{password}", method = RequestMethod.GET)
+public ResponseEntity<Users> getUser(@PathVariable("name") String name,@PathVariable("password") String password) {
 
 
-	System.out.println("Fetching User with id "+id);
-    users = usersDao.getById(id);
+	System.out.println("Fetching User with name "+name);
+    users = usersDao.getUsr(name, password);
     if (users == null) {
         System.out.println("User with id  not found");
         return new ResponseEntity<Users>(HttpStatus.NOT_FOUND);

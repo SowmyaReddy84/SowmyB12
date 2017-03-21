@@ -12,7 +12,6 @@ import com.niit.coolcodersbackend.dao.Blog_CommentDao;
 import com.niit.coolcodersbackend.model.Blog_Comment;
 
 
-
 public class Blog_CommentDaoImpl implements Blog_CommentDao{
 
 	@Autowired
@@ -26,37 +25,33 @@ public class Blog_CommentDaoImpl implements Blog_CommentDao{
 	}
 	
 	@Transactional
-	public void SaveOrUpdate(Blog_Comment cmnt) {
+	public void SaveOrUpdate(Blog_Comment cmt) {
 	
-		this.sessionFactory.getCurrentSession().saveOrUpdate(cmnt);
+		this.sessionFactory.getCurrentSession().saveOrUpdate(cmt);
 	}
 	@Transactional
-	public List<Blog_Comment> getCmtsById(int id) {
+	public List<Blog_Comment> getCmts(int id) {
 	
-		String hql = "from BComment where bid="+id;
+		String hql = "from Blog_Comment where bid="+id;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		List<Blog_Comment> lstCmnt = (List<Blog_Comment>) query.list();
+		List<Blog_Comment> listCmt = (List<Blog_Comment>) query.list();
 		
-		if (lstCmnt != null && !lstCmnt.isEmpty()) {
-			return lstCmnt;
+		if (listCmt != null && !listCmt.isEmpty()) {
+			return listCmt;
 		}
 		
 		return null;
 	
 	}
 	@Transactional
-	public List<Blog_Comment> getAllCmnts() {
+	public List<Blog_Comment> getAll() {
 	
 		@SuppressWarnings("unchecked")
-		List<Blog_Comment> lstCmnts = (List<Blog_Comment>) sessionFactory.getCurrentSession()
+		List<Blog_Comment> listCmts = (List<Blog_Comment>) sessionFactory.getCurrentSession()
 				.createCriteria(Blog_Comment.class)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-		        return lstCmnts;
+		        return listCmts;
 	
 	}
-
-	
-
-	
 
 }

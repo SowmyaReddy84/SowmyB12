@@ -14,7 +14,7 @@ angular.module('myApp').factory('ForumService', ['$http', '$q', function($http, 
 
     function fetchAllForums() {
         var deferred = $q.defer();
-        $http.get('http://localhost:8081/coolcodersbackend/forums')
+        $http.get('http://localhost:8081/CoolCodersBackend/forums')
             .then(
             function (response) {
             	console.log('Got data');
@@ -30,7 +30,7 @@ angular.module('myApp').factory('ForumService', ['$http', '$q', function($http, 
     function addForum(forumm) {
         var deferred = $q.defer();
 
-        $http.post('http://localhost:8081/coolcodersbackend/frmadd/insert/',forumm)
+        $http.post('http://localhost:8081/CoolCodersBackend/frmadd/insert/',forumm)
             .then(
             		
             function (response) {
@@ -46,7 +46,7 @@ angular.module('myApp').factory('ForumService', ['$http', '$q', function($http, 
     }
     function addRpl(reply) {
         var deferred = $q.defer();
-        $http.post('http://localhost:8081/coolcodersbackend/reply/insert/',reply)
+        $http.post('http://localhost:8081/CoolCodersBackend/reply/insert/',reply)
       
             .then(
             		
@@ -64,7 +64,7 @@ angular.module('myApp').factory('ForumService', ['$http', '$q', function($http, 
    
     function  fetchAllRep(fid) {
         var deferred = $q.defer();
-        $http.get('http://localhost:8081/coolcodersbackend/replies/'+fid)
+        $http.get('http://localhost:8081/CoolCodersBackend/replies/'+fid)
             .then(
             function (response) {
             	console.log('Got data');

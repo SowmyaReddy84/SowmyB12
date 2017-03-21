@@ -2,7 +2,7 @@
 
 angular.module('myApp').controller('UserController', ['$scope', 'UserService', function($scope, UserService) {
    
-	$scope.users={name:'',id:'',usrpwd:'',loginid:''};
+	$scope.users={id:'',loginid:'',name:'',password:''};
     $scope.userlist=[];
 	
     $scope.getAll=function(){
@@ -21,6 +21,8 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     $scope.regiUser=function(users)
     {
     	console.log('DoneA');
+   	 console.log(user);
+
     	UserService.regiUser(users)
         .then(
         		
@@ -30,13 +32,13 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     }
     $scope.doLogin=function(users)
     {	
-    	console.log('DoneA');
-    	 console.log(users.loginid);
+    	console.log('STEP 1');
+    	 console.log(users.name);
     	UserService.doLogin(users)
         .then(
         		function (response) {
                 	alert("You are authorised");
-        			console.log('doneD',users.loginid);
+        			console.log('doneD',users.name);
         			
         			 window.location = "home.html";
                 },

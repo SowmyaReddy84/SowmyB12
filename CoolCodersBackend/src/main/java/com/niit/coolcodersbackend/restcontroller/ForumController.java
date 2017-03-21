@@ -78,7 +78,7 @@ public class ForumController {
 	 @RequestMapping(value = "/replies/{fid}", method = RequestMethod.GET)
 	    public ResponseEntity<List<Forum_Response>> listAllComents(@PathVariable("fid") int fid) {
 	     System.out.println(fid);   
-		 List<Forum_Response> rpllst = forum_responseDao.getAllList();
+		 List<Forum_Response> rpllst = forum_responseDao.getRpls(fid);
 	        
 	        if(rpllst.isEmpty()){
 	            return new ResponseEntity<List<Forum_Response>>(HttpStatus.NO_CONTENT);

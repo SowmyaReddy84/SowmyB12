@@ -3,10 +3,10 @@ html, body {
 }
 
 body {
-	//background-color: #52BE80;
+	//background-color: #008080;
 	
 
-background: #239B56; /* fallback for old browsers */
+background: #008080; /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #239B56 , #239B56); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #239B56 , #239B56); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
 	    
@@ -20,7 +20,7 @@ background: linear-gradient(to left, #239B56 , #239B56); /* W3C, IE 10+/ Edge, F
 #msgContainer {
 	position: absolute; top: 0px; bottom: 45px;
 	 /*background-color: white;*/
-	 background: #009933; /* fallback for old browsers */
+	 background: #008080; /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #239B56 , #239B56); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #239B56 , #239B56); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
 	 width: 100%;

@@ -2,6 +2,7 @@ package com.niit.coolcodersbackend.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
@@ -9,13 +10,29 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 public class Forum_Response {
+	
 @Id
+@GeneratedValue
 private int rid;
 private int fid;
 private String rpl;
 private String fuser;
 private String floginid;
 private Date rdate;
+
+public Forum_Response(){}
+
+public Forum_Response( int rid,int fid, String rpl, String fuser, Date rdate,String floginid) {
+
+	
+	this.fid = fid;
+	this.rpl = rpl;
+	this.fuser = fuser;
+	this.rdate = rdate;
+	this.floginid=floginid;
+	this.rid=rid;
+}
+
 public int getRid() {
 	return rid;
 }

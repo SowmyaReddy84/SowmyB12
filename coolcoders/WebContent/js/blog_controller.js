@@ -2,10 +2,10 @@
 
 angular.module('myApp').controller('BlogController', ['$scope', 'BlogService', function($scope, BlogService) {
    
-	$scope.blogm={bid:'',btitle:'',bdesc:'',bimg:null,busr:'',bsec:'',bcmnt:'',blike:''};
+	$scope.blogm={bid:'',btitle:'',bdesc:'',bimg:null,buser:'',bsec:'',bcmnt:'',blike:''};
     $scope.blogs=[];
 	
-    $scope.coment={cid:'',bid:'',busr:'',cdt:'',cmt:''};
+    $scope.coment={cid:'',bid:'',busr:'',cdat:'',cmt:''};
     $scope.coments=[];
     
     
@@ -63,7 +63,7 @@ angular.module('myApp').controller('BlogController', ['$scope', 'BlogService', f
     	 BlogService.addCom(comment)
         .then(
         		function(response){
-        			blogm.bcmtct=blogm.bcmtct+1;
+        			blogm.bcmnt=blogm.bcmnt+1;
         			BlogService.addBlog(blogm);
                 },
         		
@@ -76,6 +76,7 @@ $scope.tab = 'btb';
     
 $scope.selectTab = function(setTab){
 	$scope.tab = setTab;
+	console.log("DONEEEEE")	
       console.log($scope.tab)
       $scope.bid=setTab;
       fetchAllCom($scope.bid);
@@ -92,7 +93,7 @@ $scope.selectTab = function(setTab){
     $scope.contLik = function(x,y,blogm){
 		
 	      console.log(x,"JKKJK JK JKJK KJ KJKJ")
-	      blogm.blikct=x;
+	      blogm.blike=x;
 	      blogm.bid=y;
 	      
 	      BlogService.addBlog(blogm);
