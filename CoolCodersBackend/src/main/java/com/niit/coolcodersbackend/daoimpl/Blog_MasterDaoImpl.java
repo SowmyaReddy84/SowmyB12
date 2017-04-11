@@ -42,10 +42,11 @@ public class Blog_MasterDaoImpl implements Blog_MasterDao {
 	}
 
 	@Transactional
-	public void deleteById(int id) {
+	public boolean deleteById(int id) {
 		Blog_Master Blog_MasterToDelete = new Blog_Master();
 		Blog_MasterToDelete.setBid(id);
 		sessionFactory.getCurrentSession().delete(Blog_MasterToDelete);
+		return true;
 		
 	}
 	@Transactional

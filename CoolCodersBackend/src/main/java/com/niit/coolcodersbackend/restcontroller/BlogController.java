@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -66,8 +67,20 @@ public class BlogController {
 	        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	    }
 	 
-	 
-	 
+	 //deleting blog
+	
+	 @RequestMapping(value = "/blogDel/{bid}", method = RequestMethod.DELETE )
+	    public void DelBlog(@PathVariable("bid") int bid) {
+	     System.out.println(bid); 
+	     System.out.println( bid+""+"Done DellllllllllHere Blog Deleting11111111111 ");
+		    boolean flag=blog_masterDao.deleteById(bid); 
+	           System.out.println("Done Here Blog Deleting22222222222222");
+//	           boolean wasOk=blog_masterDao.deleteById(bid);
+	       
+	    }   
+	       
+
+
 	 //COMMENTS
 	 
 	 @RequestMapping(value = "/coments/{bid}", method = RequestMethod.GET)

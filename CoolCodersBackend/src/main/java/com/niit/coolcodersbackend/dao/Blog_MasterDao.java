@@ -11,7 +11,7 @@ public  void SaveOrUpdate(Blog_Master blog);
 	
 	public List<Blog_Master> getAllList();
 	
-	public void deleteById(int id);
+	public boolean deleteById(int id);
 	
 	public Blog_Master getBlogById(int id);
 

@@ -40,6 +40,25 @@ angular.module('myApp').controller('BlogController', ['$scope', 'BlogService', f
         });
     }
     
+    $scope.blogDel=function(bid){
+    	console.log("HIIIIIIIIIIIII",bid);
+    	
+	      console.log(bid,"Del process A")
+	 
+	      console.log(bid,"Del process B")
+	      BlogService.blogDel(bid);
+	      console.log(bid,"Del process F")
+	     
+       .then(
+       		function(response){
+       			 window.location = "blog.html";      
+               },
+       		
+       		function(errResponse){
+           console.error('Error while deleting blog');
+       });
+    };
+    
     $scope.addBlog=function(blogm)
     {
     	 console.log(blogm);
@@ -56,6 +75,8 @@ angular.module('myApp').controller('BlogController', ['$scope', 'BlogService', f
             console.error('Error while creating blog');
         });
     }
+
+    
     $scope.addCom=function(comment,bid,blogm)
     {
     	 comment.bid=bid;
@@ -71,8 +92,10 @@ angular.module('myApp').controller('BlogController', ['$scope', 'BlogService', f
             console.error('Error while creating comnt');
         });
     }
+    
    
-$scope.tab = 'btb';
+    
+    $scope.tab = 'btb';
     
 $scope.selectTab = function(setTab){
 	$scope.tab = setTab;
@@ -98,6 +121,8 @@ $scope.selectTab = function(setTab){
 	      
 	      BlogService.addBlog(blogm);
 	    };
+	
+	
     
    
 

@@ -8,7 +8,7 @@ html {
   background:linear-gradient(
       rgba(244, 244, 244, 0.45), 
       rgba(150, 150, 150, 0.45)
-    ), url('http://www.iwallfree.com/wp-content/uploads/2013/09/memorable-sunset-beach-hd-widescreen-wallpaper.jpg') center center;
+    );
    color: white;
   width: 100%;
   z-index: 999;
