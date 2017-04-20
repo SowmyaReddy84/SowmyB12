@@ -2,11 +2,11 @@
 
 
 
-angular.module('myApp').controller('UserController', ['$scope', 'UserService', function($scope, UserService) {
+angular.module('myApp').controller('UserController', ['$scope','$rootScope', 'UserService', function($scope,$rootScope, UserService) {
    
 	$scope.users={id:'',loginid:'',name:'',password:''};
     $scope.userlist=[];
-	
+	$rootScope.uid=name;
 
     $scope.getAll=function(){
     	UserService.fetchAllUsers()
@@ -40,6 +40,7 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     }
     $scope.doLogin=function(users)
     {	
+    	
     	console.log('STEP 1');
     	 console.log(users.name);
     	UserService.doLogin(users)
@@ -47,8 +48,9 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
         		function (response) {
                 	alert("You are authorised");
         			console.log('doneD',users.name);
-//        			$rootScope.currentUser=users.name;
-//        			console.log('currentUser done printing',users.name)
+        			$rootScope.uid=users.name;
+        			console.log("TESTING...",name);
+        			
         			 window.location = "home.html";
                 },
         		function(errResponse){
