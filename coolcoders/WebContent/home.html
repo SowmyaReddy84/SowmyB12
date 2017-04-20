@@ -12,9 +12,27 @@
     <link rel="stylesheet" href="css/home.css" />
 <!-- js -->
 <!-- <script src="/js/signin.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
-<script>
+<script LANGUAGE="JavaScript">
+function getParams(){
+var idx = document.URL.indexOf('?');
+var params = new Array();
+if (idx != -1) {
+var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+for (var i=0; i<pairs.length; i++){
+nameVal = pairs[i].split('=');
+params[nameVal[0]] = nameVal[1];
+}
+}
+return params;
+}
+params = getParams();
+username = unescape(params["username"]);
+document.write("username = " + username + "<br>");
+username = unescape(params["first_name"]);
+document.write("first_name = " + first_name + "<br>");
+
+
 
 </script>
 </head>
@@ -22,14 +40,15 @@
 <!-- <div ng-app="myApp" ng-controller="UserController"> -->
 <!-- <h3 style="color:white; text-align:right;">welcome!{{users.name}}</h3> -->
 <!-- </div> -->
-<div class="container" style="margin-top:100px" >
+<div class="container" style="margin-top:25px" >
 
+  
 
 <h2 style="color:white; text-align:center;"><strong>CHOOSE?</strong></h2>
 
 
 
-<div class="row" style="margin-top:100px">
+<div class="row" style="margin-top:25px">
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top:100px">
     <div class="hovereffect">
         <img class="img-responsive img-rounded" src="resources/img/blogim.jpg" alt="blog" style="height:200px;width:250px">

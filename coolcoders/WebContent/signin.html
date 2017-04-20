@@ -24,7 +24,7 @@
 <!-- js -->
 <!--  <script src="/js/signin.js"></script>  -->
 <script>
-	
+	 
 </script>
 </head>
 <body ng-app="myApp" ng-controller="UserController">
@@ -40,14 +40,14 @@
 					</h1>
 				</div>
 				<!-- /.logo -->
-				<form ng-submit="doLogin(users)" >
+				<form  type=get action=home.html ng-submit="doLogin(users)">
 				<div class="controls">
 					<input type="text" name="username" ng-model="users.name"
 						placeholder="Username" class="form-control" /> 
 				    <input type="password" name="password" ng-model="users.password" 
 						placeholder="Password" class="form-control" /><br>
 					<button type="submit" class="btn btn-warning btn-block btn-md">Submit</button>
-					<a href="home.html" class="btn btn-success btn-block btn-sm"
+					<a href="index.html" class="btn btn-success btn-block btn-sm"
 						role="button">Cancel</a>
 				</div>
 				</form>	
