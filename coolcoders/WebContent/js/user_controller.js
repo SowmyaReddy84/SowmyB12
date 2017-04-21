@@ -4,9 +4,9 @@
 
 angular.module('myApp').controller('UserController', ['$scope','$rootScope', 'UserService', function($scope,$rootScope, UserService) {
    
-	$scope.users={id:'',loginid:'',name:'',password:''};
+	$rootScope.users={id:'',loginid:'',name:'',password:''};
     $scope.userlist=[];
-	$rootScope.uid=name;
+	
 
     $scope.getAll=function(){
     	UserService.fetchAllUsers()
@@ -48,8 +48,8 @@ angular.module('myApp').controller('UserController', ['$scope','$rootScope', 'Us
         		function (response) {
                 	alert("You are authorised");
         			console.log('doneD',users.name);
-        			$rootScope.uid=users.name;
-        			console.log("TESTING...",name);
+        			$rootScope.name=users.name;
+        			console.log("TESTING...",users.name);
         			
         			 window.location = "home.html";
                 },
