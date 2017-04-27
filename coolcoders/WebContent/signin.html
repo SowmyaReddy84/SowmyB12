@@ -40,22 +40,26 @@
 					</h1>
 				</div>
 				<!-- /.logo -->
-				<form ng-submit="doLogin(users)" >
+				<form ng-submit="doLogins(users)" >
 				<div class="controls">
 					<input type="text" name="username" ng-model="users.name"
 						placeholder="Username" class="form-control" /> 
 				    <input type="password" name="password" ng-model="users.password" 
 						placeholder="Password" class="form-control" /><br>
 					<button type="submit" class="btn btn-warning btn-block btn-md">Submit</button>
-					<a href="home.html" class="btn btn-success btn-block btn-sm"
+					<a href="index.html" class="btn btn-success btn-block btn-sm"
 						role="button">Cancel</a>
+						
 				</div>
 				</form>	
 				<!-- /.controls -->
 			</div>
 			<!-- /#login-box -->
 		</div>
+	
+		
 		<script src="js/angular/angular.js"></script>
+		
 		
 		<script src="js/app.js"></script>
 		<script src="js/user_controller.js"></script>
@@ -65,7 +69,8 @@
 			<h4>Register,more to see!</h4>
 			<a href="register.html" class="btn btn-success  btn-md"
 				role="button">REGISTER</a>
-
+			<a href="" ng-click="getAll()" class="btn btn-success  btn-md"
+				role="button">getAllUserss</a>
 
 		</div>
 	</div>

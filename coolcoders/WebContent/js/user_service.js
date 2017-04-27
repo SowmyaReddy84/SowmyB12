@@ -6,7 +6,8 @@ angular.module('myApp').factory('UserService', ['$http','$q', function($http, $q
     var factory = {
         fetchAllUsers: fetchAllUsers,
         regiUser: regiUser,
-        doLogin:doLogin
+        doLogins:doLogins,
+        
      };
     var nam="name";
     return factory;
@@ -14,7 +15,7 @@ angular.module('myApp').factory('UserService', ['$http','$q', function($http, $q
     function fetchAllUsers() {
         var deferred = $q.defer();
         
-        $http.get('http://localhost:8181/CoolCodersBackend/users/?name="name"')
+        $http.get('http://localhost:8081/CoolCodersBackend/users/?name="name"')
             .then(
             function (response) {
             	console.log('Got data');
@@ -31,10 +32,11 @@ angular.module('myApp').factory('UserService', ['$http','$q', function($http, $q
         var deferred = $q.defer();
         console.log('Done B');
 //        $http.post('http://localhost:8181/CodersBench/user/insert/',{user: u})
-        $http.post('http://localhost:8181/CoolCodersBackend/users/insert/',users)
+        $http.post('http://localhost:8081/CoolCodersBackend/users/insert/',users)
             .then(
             		
             function (response) {
+            	
             	deferred.resolve(response.data);
             	console.log('done C');
             },
@@ -45,17 +47,17 @@ angular.module('myApp').factory('UserService', ['$http','$q', function($http, $q
         );
         return deferred.promise;
     }
-    function doLogin(users) {
+    function doLogins(users) {
         var deferred = $q.defer();
         console.log('STEP 2');
 //        http://localhost:8181/CoolCodersBackend/users/dologs/1/ss
-        $http.get('http://localhost:8181/CoolCodersBackend/users/dologs/'+users.name+'/'+users.password)
-      
+        $http.get('http://localhost:8081/CoolCodersBackend/users/dologs/'+users.name+'/'+users.password)
             .then(
-            		
             function (response) {
-            	deferred.resolve(response.data);
-            	console.log('done C');
+            	 console.log('STEP 3');	
+            	 console.log('Got data');
+            	 deferred.resolve(response.data);
+            	
             },
             function(errResponse){
                 console.error('Error while creating Users');
@@ -64,6 +66,6 @@ angular.module('myApp').factory('UserService', ['$http','$q', function($http, $q
         );
         return deferred.promise;
     }
-   
+      
 
 }]);

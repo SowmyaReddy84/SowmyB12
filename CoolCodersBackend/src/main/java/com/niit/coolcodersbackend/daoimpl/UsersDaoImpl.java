@@ -41,13 +41,14 @@ public class UsersDaoImpl implements UsersDao {
 	public Users getById(int id) {
 	String hql = "from Users where id=" + id;
 	Query query = sessionFactory.getCurrentSession().createQuery(hql);
-	
+	System.out.println("uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
 	@SuppressWarnings("unchecked")
 	List<Users> lstUsers = (List<Users>) query.list();
 	
 	if (lstUsers != null && !lstUsers.isEmpty()) {
 		return lstUsers.get(0);
 	}
+	System.out.println(lstUsers.get(id));
 	return null;
 	}
 @Transactional

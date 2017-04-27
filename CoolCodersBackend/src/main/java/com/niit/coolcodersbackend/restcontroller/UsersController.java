@@ -41,18 +41,34 @@ public ResponseEntity<List<Users>> list() {
 }
 
 //---------------------------------------------FETCH ONE USER--------------------------------------------------
+@SuppressWarnings("unchecked")
 @RequestMapping(value = "/users/dologs/{name}/{password}", method = RequestMethod.GET)
-public ResponseEntity<Users> getUser(@PathVariable("name") String name,@PathVariable("password") String password) {
+public ResponseEntity getUser(@PathVariable("name") String name,@PathVariable("password") String password) {
 
 
-	System.out.println("Fetching User with name "+name);
+	System.out.println("Fetching User with name ");
     users = usersDao.getUsr(name, password);
     if (users == null) {
         System.out.println("User with id  not found");
         return new ResponseEntity<Users>(HttpStatus.NOT_FOUND);
     }
-    return new ResponseEntity<Users>(users, HttpStatus.OK);
+    return new ResponseEntity(users, HttpStatus.OK);
 }
+
+@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
+public ResponseEntity<Users> getuser(@PathVariable("id") int id) {
+ System.out.println(id); 
+ 
+ Users usrs  =usersDao.getById(id);
+ 
+ System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOO "+usrs.getName());
+    if(usrs!=null){
+        return new ResponseEntity<Users>(HttpStatus.NO_CONTENT);
+        //You many decide to return HttpStatus.NOT_FOUND
+    }
+    return new ResponseEntity<Users>(usrs, HttpStatus.OK);
+}
+
 
 //--------------------------------------------INSERT-------------------------------------------------------------
 @RequestMapping(value = "/users/insert", method = RequestMethod.POST )
