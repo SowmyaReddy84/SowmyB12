@@ -2,11 +2,13 @@
 
 
 
-angular.module('myApp').controller('UserController', ['$scope','$rootScope', 'UserService', function($scope,$rootScope, UserService) {
+angular.module('myApp').controller('UserController', ['$scope','$rootScope','$location','UserService', function($scope,$rootScope,$location,UserService) {
    
 	$scope.users={id:'',loginid:'',name:'',password:''};
     $scope.userlist=[];
-    $rootScope.n={unm:''};
+    $rootScope.uname=$scope.users.name;
+//	var nurl='home.html'
+
     
     $scope.getAll=function(){
     	UserService.fetchAllUsers()
@@ -50,13 +52,14 @@ angular.module('myApp').controller('UserController', ['$scope','$rootScope', 'Us
         			if(d!=null)
         				console.log('doneD');
         			else
-        				console.log('Not doneD');
+        				console.log('Not doneD');22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
         			$scope.users=d;
                 	alert("You are authorised");
-        			console.log('doneD',$scope.users.name);
-        			
-        			window.location = "home.html";
-        			$rootScope.n.unm=$scope.users.name;
+        			console.log('doneD',$scope.users.name);/////////the  last line done d ss is printing here
+        			$location.path('/home');
+//        			window.location="home.html";
+//        			window.location.href=nurl;
+        			$rootScope.uname=$scope.users.name;
 //        			console.log("TESTING...",$rootscope.n);
 //        			console.log("TESTING...",n.unm);
 
