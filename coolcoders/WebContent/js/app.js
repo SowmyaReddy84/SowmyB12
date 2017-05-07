@@ -3,11 +3,16 @@
 var App = angular.module('myApp',['ngRoute']);
 App.config(function($routeProvider) {
     $routeProvider
-    .when("\home", {
+    .when('/home', {
     	
-        templateUrl : "\home.html"
+        templateUrl : 'home.html',
+        controller : 'UserController'
+        	
         	
     })
+    .otherwise({
+		redirectTo: '/home'
+	});
     
   
 });
